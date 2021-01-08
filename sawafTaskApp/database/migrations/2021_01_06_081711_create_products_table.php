@@ -15,10 +15,10 @@ class CreateProductsTable extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->id();
-            $table->string("ProductName",10);
+            $table->string("ProductName",50);
             $table->unsignedBigInteger("SupplierId");
             $table->decimal("UnitPrice",$precision = 12, $scale = 2);
-            $table->foreign("SupplierId")->references("id")->on("suppliers");      
+            $table->foreign("SupplierId")->references("id")->on("suppliers")->onDelete("cascade");      
         });
     }
 

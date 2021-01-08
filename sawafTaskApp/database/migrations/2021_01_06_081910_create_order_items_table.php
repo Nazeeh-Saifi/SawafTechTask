@@ -19,8 +19,8 @@ class CreateOrderItemsTable extends Migration
             $table->unsignedBigInteger("ProductId");
             $table->decimal("UnitPrice",$precision = 12, $scale = 2);
             $table->integer("Quantity");
-            $table->foreign("OrderId")->references("id")->on("orders");
-            $table->foreign("ProductId")->references("id")->on("products");
+            $table->foreign("OrderId")->references("id")->on("orders")->onDelete("cascade");
+            $table->foreign("ProductId")->references("id")->on("products")->onDelete("cascade");
         });
     }
 

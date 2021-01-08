@@ -19,7 +19,7 @@ class CreateOrdersTable extends Migration
             $table->string("OrderNumber",10);
             $table->unsignedBigInteger("CustomerId");
             $table->decimal("TotalAmount",$precision = 12, $scale = 2);
-            $table->foreign("CustomerId")->references("id")->on("customers");
+            $table->foreign("CustomerId")->references("id")->on("customers")->onDelete("cascade");
         });
     }
     
