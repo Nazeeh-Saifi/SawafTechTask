@@ -1,11 +1,13 @@
 import Vue from "vue";
 import Router from "vue-router";
 
+const Home = () => import("@/components/HelloWorld");
 const Products = () => import("@/views/Products");
 const CreateProduct = () => import("@/views/CreateProduct");
 const UpdateProduct = () => import("@/views/UpdateProduct");
-const Home = () => import("@/components/HelloWorld");
-// const Bar = { template: "<div>bar</div>" };
+const Orders = () => import("@/views/Orders");
+const CreateOrder = () => import("@/views/CreateOrder");
+const UpdateOrder = () => import("@/views/UpdateOrder");
 
 const routes = [
   {
@@ -35,6 +37,31 @@ const routes = [
         path: ":id/edit",
         name: "UpdateProduct",
         component: UpdateProduct,
+      },
+    ],
+  },
+  {
+    path: "/orders",
+    component: {
+      render(c) {
+        return c("router-view");
+      },
+    },
+    children: [
+      {
+        path: "",
+        name: "Orders",
+        component: Orders,
+      },
+      {
+        path: "create",
+        name: "CreateOrder",
+        component: CreateOrder,
+      },
+      {
+        path: ":id/edit",
+        name: "UpdateOrder",
+        component: UpdateOrder,
       },
     ],
   },

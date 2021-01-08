@@ -3,7 +3,7 @@
     <b-navbar-nav>
       <b-nav-item to="/">Home</b-nav-item>
       <b-nav-item to="/products">Products</b-nav-item>
-      <b-nav-item to="/bar">Go to Bar</b-nav-item>
+      <b-nav-item to="/orders">Orders</b-nav-item>
       <!-- Navbar dropdowns -->
       <!-- <b-nav-item-dropdown text="Lang" right>
         <b-dropdown-item href="#">EN</b-dropdown-item>
