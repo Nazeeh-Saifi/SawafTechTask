@@ -14,7 +14,7 @@ class ProductController extends Controller
     public function index()
     {
         $products= Product::all();
-        $products->makeHidden(["SupplierId"]);
+        // $products->makeHidden(["SupplierId"]);
         return response()->json([
             'success' => true,
             'message' => 'List of All products',
