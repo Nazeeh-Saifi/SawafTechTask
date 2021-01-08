@@ -173,11 +173,12 @@ export default {
       formData.set("ProductName", this.form.ProductName);
       formData.set("SupplierId", this.form.SupplierId);
       formData.set("UnitPrice", this.form.UnitPrice);
+      formData.set("_method", "PUT");
 
       console.log(this.form);
       let self = this;
       axios
-        .put(this.$apiAdress + "/api/products" + this.id, formData)
+        .post(this.$apiAdress + "/api/products/" + this.id, formData)
         .then(function (response) {
           console.log(response);
           self.goBack();
